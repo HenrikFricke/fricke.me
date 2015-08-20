@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-playground",
+  "version": "1.0.0",
+  "description": "A little repo to go a step deeper into nodejs.",
+  "main": "server.js",
+  "dependencies": {
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenrikFricke/nodejs-playground.git"
+  },
+  "author": "Henrik Fricke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HenrikFricke/nodejs-playground/issues"
+  },
+  "homepage": "https://github.com/HenrikFricke/nodejs-playground#readme"
+}
