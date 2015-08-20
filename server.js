@@ -9,8 +9,12 @@ var serverInit = function(request, response) {
     if (err)
       response.write('Something went wrong! Try again later.')
     else
-      var html = jade.renderFile(page)
-      response.write(html)
+      jade.renderFile(page, function (err, data) {
+        if (err)
+          response.write('Something went wrong! Try again later.')
+        else
+          response.write(data)
+      })
     response.end()
   })
 }
