@@ -1,17 +1,17 @@
 var http = require("http");
 var fs = require("fs");
-var analyzepath = require("./analyzepath")
+var jade = require('jade')
+var analyzepath = require("./analyzepath-jade")
 
 var serverInit = function(request, response) {
   response.writeHead(200, {"Content-Type": "text/html"})
   analyzepath(request.url, function(err, page) {
-    fs.readFile(page, function(err2, data) {
-      if (err || err2)
-        response.write('Something went wrong! Try again later.')
-      else
-        response.write(data)
-      response.end()
-    })
+    if (err)
+      response.write('Something went wrong! Try again later.')
+    else
+      var html = jade.renderFile(page)
+      response.write(html)
+    response.end()
   })
 }
 
