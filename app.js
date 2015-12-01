@@ -2,33 +2,27 @@
 // ## Dependencies
 // ########################################
 
-var jade = require('jade')
 var express = require('express')
 
 // ########################################
-// ## Internal dependencies
+// ## Config
 // ########################################
 
 var config = require('./config/config')
 
+var routes_app = require('./routes/app')
+var routes_api = require('./routes/api')
+
 // ########################################
-// ## Routing
+// ## App
 // ########################################
 
 var app = express()
 
-app.get('/*', function(req, res){
-  var page = req.url
-  if (page == "/")
-    page = '/index'
-  res.writeHead(200, {"Content-Type": "text/html"})
-  jade.renderFile( config.paths.content + page + '.jade', function (err, data) {
-    if (err)
-      res.write('Something went wrong! Try again later.')
-    else
-      res.write(data)
-  })
-  res.end()
+app.get('/', function(req, res) {
+  res.redirect('/app');
 })
+app.use('/app', routes_app)
+app.use('/api', routes_api)
 
 app.listen(process.env.PORT || 3000)
