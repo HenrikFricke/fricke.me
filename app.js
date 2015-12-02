@@ -3,15 +3,13 @@
 // ########################################
 
 var express = require('express')
+var path = require('path')
 
 // ########################################
 // ## Config
 // ########################################
 
 var config = require('./config/config')
-
-var routes_app = require('./routes/app')
-var routes_api = require('./routes/api')
 
 // ########################################
 // ## App
@@ -20,9 +18,15 @@ var routes_api = require('./routes/api')
 var app = express()
 
 app.get('/', function(req, res) {
-  res.redirect('/app');
+  res.sendFile(path.join(__dirname + '/app/index.html'))
 })
-app.use('/app', routes_app)
-app.use('/api', routes_api)
 
 app.listen(process.env.PORT || 3000)
+
+// ########################################
+// ## API
+// ########################################
+
+var api = require('./api/api')
+
+app.use('/api', api)
