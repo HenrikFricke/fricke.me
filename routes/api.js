@@ -11,7 +11,7 @@ route.get('/', function(req, res, next) {
 })
 
 route.get('/kfz', function(req, res, next) {
-  var client = new pg.Client(process.env.DATABASE_URL)
+  var client = new pg.Client(process.env.HEROKU_POSTGRESQL_COBALT_URL)
   client.connect(function(err) {
     if(err) {
       return console.error('could not connect to postgres', err);
