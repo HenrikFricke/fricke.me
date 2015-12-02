@@ -2,7 +2,7 @@
   "name": "nodejs-playground",
   "version": "1.0.0",
   "description": "A little repo to go a step deeper into nodejs.",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.13.3",
     "jade": "^1.11.0",
