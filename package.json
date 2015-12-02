@@ -8,9 +8,13 @@
     "jade": "^1.11.0",
     "pg": "^4.4.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-jade": "^0.15.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "grunt production",
     "start": "node app.js"
   },
   "repository": {
