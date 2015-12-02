@@ -11,20 +11,13 @@ route.get('/', function(req, res, next) {
 })
 
 route.get('/kfz', function(req, res, next) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+  var client = new pg.Client(process.env.DATABASE_URL)
+  client.connect(function(err) {
     if(err) {
-      return console.error('error fetching client from pool', err)
+      return console.error('could not connect to postgres', err);
     }
-    // client.query('SELECT $1::int AS number', ['1'], function(err, result) {
-    //   //call `done()` to release the client back to the pool
-    //   done();
-    //
-    //   if(err) {
-    //     return console.error('error running query', err);
-    //   }
-    //   console.log(result.rows[0].number);
-    //   //output: 1
-    // });
+    res.send('KFZ')
+    client.end()
   })
 })
 
