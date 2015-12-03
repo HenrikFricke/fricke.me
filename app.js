@@ -17,10 +17,7 @@ var config = require('./config/config')
 
 var app = express()
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/build/index.html'))
-})
-
+app.use(express.static('./build'));
 app.listen(process.env.PORT || 3000)
 
 // ########################################
