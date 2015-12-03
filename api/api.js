@@ -3,13 +3,13 @@
 // ########################################
 
 var express = require('express')
-var route_atm = require('./atm.js')
-var route_provider = require('./provider.js')
+var route_atms = require('./atm.js')
+var route_providers = require('./provider.js')
 
 var route = express.Router()
 
 // all routes for api
-route.use('/atm', route_atm)
-route.use('/provider', route_provider)
+route.use('/atms', route_atms)
+route.use('/providers', route_providers)
 
 module.exports = route
