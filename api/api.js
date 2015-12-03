@@ -3,24 +3,11 @@
 // ########################################
 
 var express = require('express')
-var pg = require('pg')
+var route_atm = require('./atm.js')
+
 var route = express.Router()
 
-route.get('/charts', function(req, res, next) {
-  var client = new pg.Client(process.env.HEROKU_POSTGRESQL_COBALT_URL)
-  client.connect(function(err) {
-    if(err) {
-      return console.error('could not connect to postgres', err);
-    }
-
-    client.query('SELECT * FROM charts;', function(err, result) {
-      if(err) {
-        return console.error('error running query', err)
-      }
-      res.send(result.rows)
-      client.end()
-    })
-  })
-})
+// all routes for api
+route.use('/atm', route_atm)
 
 module.exports = route
