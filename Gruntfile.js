@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
 
+  // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -15,7 +18,8 @@ module.exports = function(grunt) {
         options: {
           data: {
             debug: false
-          }
+          },
+          pretty: true
         },
         files: [{
           expand: true,
@@ -45,7 +49,7 @@ module.exports = function(grunt) {
 
     // minify css
     cssmin: {
-      target: {
+      sass: {
         files: [{
           expand: true,
           cwd: 'build/',
@@ -72,22 +76,53 @@ module.exports = function(grunt) {
           spawn: false,
         }
       }
+    },
+
+    // copy bower files
+    bower: {
+      dev: {
+        dest: 'build/',
+        fonts_dest: 'build/font',
+        js_dest: 'build/js',
+        css_dest: 'build/css',
+        options: {
+          keepExpandedHierarchy: false
+        }
+      }
+    },
+
+    useminPrepare: {
+      html: 'build/index.html',
+      options: {
+        dest: 'build/',
+        flow: {
+          html: {
+            steps: {
+              js: ['concat', 'uglifyjs'],
+              css: ['cssmin']
+            },
+            post: {}
+          }
+        }
+      }
+    },
+
+    usemin: {
+      html: ['build/{,*/}*.html'],
+      css: ['build/styles/{,*/}*.css'],
+      options: {
+        assetsDirs: ['build/','build/images']
+      }
     }
   });
 
-  // Load packages
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
   // Build everything for production
-  grunt.registerTask('sass-compiling', ['sass', 'cssmin']);
-  grunt.registerTask('dev', ['clean:build', 'jade', 'sass-compiling', 'watch']);
-  grunt.registerTask('production', ['clean:build', 'jade', 'sass-compiling']);
+  grunt.registerTask('compiling', ['clean:build', 'jade', 'sass', 'cssmin:sass']);
+  grunt.registerTask('building', ['useminPrepare', 'cssmin', 'concat', 'uglify', 'usemin']);
+
+  grunt.registerTask('dev', ['compiling', 'building', 'watch']);
+  grunt.registerTask('production', ['compiling', 'building']);
 
   // Default task(s).
   grunt.registerTask('default', ['dev']);
-
 };
