@@ -29,10 +29,10 @@ module.exports = function(grunt) {
 
     // sass compiling
     sass: {
+      options: {
+        sourceMap: true
+      },
       dist: {
-        options: {
-          style: 'expanded'
-        },
         files: [{
           expand: true,
           cwd: 'app/style/',
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
   // Load packages
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
