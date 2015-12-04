@@ -1,5 +1,5 @@
 doctype html
-html(ng-app="atm")
+html(ng-app="AtmApp")
   head
     block head
     meta(name="viewport", content="width=device-width, initial-scale=1")
@@ -7,16 +7,20 @@ html(ng-app="atm")
     // build:css vendor.css
     link(rel="stylesheet", type="text/css", href="../bower_components/Materialize/dist/css/materialize.css")
     // endbuild
-  body(ng-controller="AtmController as atm")
+  body(ng-controller="AtmController")
     include ../views/navbar.jade
-    p {{ atm.name }}
-    block content
+    
+    .container
+      block content
+      
     // build:js vendor.js
     script(type="text/javascript", src="bower_components/angular/angular.js")
+    script(type="text/javascript", src="bower_components/angular-restmod/dist/angular-restmod-bundle.js")
     script(type="text/javascript", src="bower_components/jquery/dist/jquery.js")
     script(type="text/javascript", src="bower_components/Materialize/dist/js/materialize.js")
     // endbuild
     // build:js app.js
     script(type="text/javascript", src="app/scripts/app.js")
+    script(type="text/javascript", src="app/scripts/services/rest.js")
     script(type="text/javascript", src="app/scripts/controller/atm.js")
     // endbuild

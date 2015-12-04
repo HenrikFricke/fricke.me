@@ -1,1 +1,1 @@
-angular.module('atm', [])
+angular.module('AtmApp', ['restmod'])

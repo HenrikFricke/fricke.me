@@ -76,18 +76,19 @@ module.exports = function(grunt) {
         options: {
           spawn: false,
         }
-      }
-    },
-
-    // copy bower files
-    bower: {
-      dev: {
-        dest: 'build/',
-        fonts_dest: 'build/font',
-        js_dest: 'build/js',
-        css_dest: 'build/css',
+      },
+      bower: {
+        files: ['./bower_components/**/*'],
+        tasks: ['copy:bower'],
         options: {
-          keepExpandedHierarchy: false
+          spawn: false,
+        }
+      },
+      js: {
+        files: ['./app/scripts/**/*'],
+        tasks: ['copy:js'],
+        options: {
+          spawn: false,
         }
       }
     },

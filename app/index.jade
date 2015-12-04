@@ -6,4 +6,11 @@ block head
 
 //- body 
 block content
-  
+  div(ng-repeat="item in list")
+    p {{ item.name }}
+    address 
+      {{ item.street }}
+      br
+      {{ item.plz }}
+      br
+      {{ item.city }}
