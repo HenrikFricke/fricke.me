@@ -3,10 +3,10 @@ html(ng-app="AtmApp")
   head
     block head
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", type="text/css", href="style.min.css")
     // build:css vendor.css
-    link(rel="stylesheet", type="text/css", href="../bower_components/Materialize/dist/css/materialize.css")
+    link(rel="stylesheet", type="text/css", href="bower_components/Materialize/dist/css/materialize.css")
     // endbuild
+    link(rel="stylesheet", type="text/css", href="style.min.css")
   body(ng-controller="AtmController")
     include ../views/navbar.jade
     
