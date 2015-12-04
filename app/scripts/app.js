@@ -1,1 +1,1 @@
-angular.module('AtmApp', ['restmod'])
+angular.module('AtmApp', ['restmod']);

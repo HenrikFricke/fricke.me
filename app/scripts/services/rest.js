@@ -1,4 +1,4 @@
 angular.module('AtmApp')
-  .factory('atms', function(restmod) {
-      return restmod.model('/api/atms')
-  })
+  .factory('atms', ['restmod', function(restmod) {
+      return restmod.model('/api/atms');
+  }]);

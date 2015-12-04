@@ -96,16 +96,7 @@ module.exports = function(grunt) {
     useminPrepare: {
       html: 'build/index.html',
       options: {
-        dest: 'build/',
-        flow: {
-          html: {
-            steps: {
-              js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
-            },
-            post: {}
-          }
-        }
+        dest: 'build/'
       }
     },
 
