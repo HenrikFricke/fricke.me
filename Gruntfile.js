@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 
   // Build everything for production
   grunt.registerTask('compiling', ['clean:build', 'jade', 'sass', 'cssmin:sass', 'copy']);
-  grunt.registerTask('building', ['useminPrepare', 'cssmin', 'concat', 'uglify', 'usemin']);
+  grunt.registerTask('building', ['useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'usemin']);
 
   grunt.registerTask('dev', ['compiling', 'watch']);
   grunt.registerTask('production', ['compiling', 'building', 'clean:production']);
