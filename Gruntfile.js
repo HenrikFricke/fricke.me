@@ -102,7 +102,7 @@ module.exports = function(grunt) {
 
     usemin: {
       html: ['build/{,*/}*.html'],
-      css: ['build/styles/{,*/}*.css'],
+      css: ['build/{,*/}*.css'],
       options: {
         assetsDirs: ['build/','build/images']
       }
