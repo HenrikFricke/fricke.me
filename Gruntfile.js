@@ -9,7 +9,8 @@ module.exports = function(grunt) {
 
     // clean up folders
     clean: {
-      build: ["build/"]
+      build: ["build/"],
+      production: ["build/app/", "build/bower_components/"]
     },
 
     // parse jade
@@ -64,13 +65,13 @@ module.exports = function(grunt) {
     watch: {
       style: {
         files: ['./app/style/**/*.sass'],
-        tasks: ['sass-compiling'],
+        tasks: ['sass', 'cssmin:sass'],
         options: {
           spawn: false,
         }
       },
       jade: {
-        files: ['./app/*.jade'],
+        files: ['./app/**/*.jade'],
         tasks: ['jade'],
         options: {
           spawn: false,
@@ -113,15 +114,34 @@ module.exports = function(grunt) {
       options: {
         assetsDirs: ['build/','build/images']
       }
+    },
+
+    copy: {
+      bower: {
+        files: [{
+          expand: true,
+          cwd: 'bower_components/',
+          src: '**/*',
+          dest: 'build/bower_components',
+        }]
+      },
+      js: {
+        files: [{
+          expand: true,
+          cwd: 'app/scripts/',
+          src: '**/*.js',
+          dest: 'build/app/scripts/',
+        }]
+      }
     }
   });
 
   // Build everything for production
-  grunt.registerTask('compiling', ['clean:build', 'jade', 'sass', 'cssmin:sass']);
+  grunt.registerTask('compiling', ['clean:build', 'jade', 'sass', 'cssmin:sass', 'copy']);
   grunt.registerTask('building', ['useminPrepare', 'cssmin', 'concat', 'uglify', 'usemin']);
 
-  grunt.registerTask('dev', ['compiling', 'building', 'watch']);
-  grunt.registerTask('production', ['compiling', 'building']);
+  grunt.registerTask('dev', ['compiling', 'watch']);
+  grunt.registerTask('production', ['compiling', 'building', 'clean:production']);
 
   // Default task(s).
   grunt.registerTask('default', ['dev']);
