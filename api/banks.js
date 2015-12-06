@@ -14,5 +14,8 @@ route.get('/:bank_id', function(req, res, next) {
   database.get('SELECT * FROM atm_provider WHERE id = '+req.params.bank_id+';', res)
 })
 
+route.get('/:bank_id/atms', function(req, res, next) {
+  database.get('SELECT * FROM atm WHERE provider = '+req.params.bank_id+';', res)
+})
 
 module.exports = route
