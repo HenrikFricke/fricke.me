@@ -3,8 +3,8 @@
 // ########################################
 
 var express = require('express')
-var resource_atms = require('./atm.js')
-var resource_banks = require('./banks.js')
+var resource_atms = require('./resources/atms.js')
+var resource_banks = require('./resources/banks.js')
 
 var route = express.Router()
 

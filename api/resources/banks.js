@@ -3,7 +3,7 @@
 // ########################################
 
 var express = require('express')
-var database = require('./services/database.js')
+var database = require('../services/database.js')
 var route = express.Router()
 
 route.get('/', function(req, res, next) {
