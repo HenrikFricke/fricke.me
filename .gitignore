@@ -1,0 +1,8 @@
+node_modules
+bower_components
+.env
+build
+.DS_Store
+.sass-cache
+.tmp
+.grunt
