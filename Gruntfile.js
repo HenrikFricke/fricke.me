@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'app/style/',
-          src: '{,*/}*.sass',
+          src: '{,*/}*.scss',
           dest: 'build/',
           ext: '.css'
         }]
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
     // watcher
     watch: {
       style: {
-        files: ['./app/style/**/*.sass'],
+        files: ['./app/style/**/*.scss'],
         tasks: ['sass', 'cssmin:sass'],
         options: {
           spawn: false,
