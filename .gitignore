@@ -6,3 +6,4 @@ build
 .sass-cache
 .tmp
 .grunt
+npm-debug.log
