@@ -1,0 +1,16 @@
+%clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+%container-std {
+  @extend %clearfix;
+  @include gridle_row();
+  max-width:960px;
+  margin:0 auto;
+  box-sizing: border-box;
+}
