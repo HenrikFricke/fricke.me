@@ -169,7 +169,7 @@ module.exports = function(grunt) {
   grunt.registerTask('building', ['useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'usemin']);
 
   grunt.registerTask('dev', ['compiling', 'connect', 'watch']);
-  grunt.registerTask('production', ['compiling', 'building', 'clean:production', 'gh-pages']);
+  grunt.registerTask('production', ['compiling', 'building', 'clean:production', 'bump', 'gh-pages']);
 
   // Default task(s).
   grunt.registerTask('default', ['dev']);
