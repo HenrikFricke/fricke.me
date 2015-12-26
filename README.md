@@ -2,7 +2,7 @@
 > [fricke.me](http://fricke.me) - a little portfolio website
 
 ## Contribute 
-> You have to installed nodejs, grunt and bower on your machine.
+> You need nodejs, grunt and bower on your machine.
 
 Install components: 
 
