@@ -125,6 +125,10 @@ module.exports = function(grunt) {
           src: '**/*.js',
           dest: 'build/app/scripts/',
         }]
+      },
+      cname: {
+        src: './CNAME',
+        dest: 'build/'
       }
     },
 
@@ -157,11 +161,11 @@ module.exports = function(grunt) {
   });
 
   // Build everything for production
-  grunt.registerTask('compiling', ['clean:build', 'jade', 'sass', 'cssmin:sass', 'copy']);
+  grunt.registerTask('compiling', ['clean:build', 'jade', 'sass', 'cssmin:sass', 'copy:bower', 'copy:js']);
   grunt.registerTask('building', ['useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'usemin']);
 
   grunt.registerTask('dev', ['compiling', 'connect', 'watch']);
-  grunt.registerTask('production', ['compiling', 'building', 'clean:production', 'bump', 'gh-pages']);
+  grunt.registerTask('production', ['compiling', 'copy:cname', 'building', 'clean:production', 'bump', 'gh-pages']);
 
   // Default task(s).
   grunt.registerTask('default', ['dev']);
