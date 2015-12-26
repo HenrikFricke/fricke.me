@@ -14,7 +14,8 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "Materialize": "materialize#~0.97.3"
+  "dependencies": {},
+  "devDependencies": {
+    "gridle": "~2.0.44"
   }
 }
