@@ -1,0 +1,80 @@
+// ########################################################
+// ##                 Import basics                      ##
+// ########################################################
+
+@import '~basicstyle';
+
+// ########################################################
+// ##                    Hero unit                       ##
+// ########################################################
+
+.latest-tweet {
+  background-color: $yellow;
+}
+
+.latest-tweet__container {
+  @extend %container-std;
+  padding: 55px 0;
+  text-align: center;
+}
+
+.latest-tweet__title {
+  @include gridle_grid(12);
+  font-size: 2.3em;
+  text-align: center;
+  font-weight: 300;
+}
+
+.latest-tweet__tweet {
+  @include gridle_grid(12);
+  margin-top: 35px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 300;
+  font-style: italic;
+  position: relative;
+  line-height: 2em;
+
+  a:link,
+  a:visited {
+    color: $font-color-dark;
+  }
+
+  &:before,
+  &:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    font-size: 0.9em;
+    position: relative;
+    color: $font-color-dark;
+  }
+
+  &:before {
+    content: "\F10E";
+    margin-right: 10px;
+    top: 10px;
+  }
+
+  &:after {
+    content: "\F10D";
+    margin-left: 10px;
+    top: -10px;
+  }
+}
+
+.latest-tweet__button {
+  margin-top: 55px;
+  padding: 5px 15px;
+  border: 1px solid $font-color-dark;
+  font-size: 1.2em;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  color: $font-color-dark;
+  transition: all 300ms;
+
+  &:hover {
+    background-color: $font-color-dark;
+    color: $font-color-light;
+  }
+}

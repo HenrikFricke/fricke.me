@@ -1,0 +1,10 @@
+- require('./latest-tweet.js')
+- require('./latest-tweet.scss')
+- require('fontawesome')
+- var data = require('./latest-tweet.cson')
+
+.latest-tweet
+  .latest-tweet__container
+    .latest-tweet__title #{data.title}
+    #tweet.latest-tweet__tweet #{data.dummy}
+    a(href="#{data.button.url}", target="_blank").latest-tweet__button #{data.button.text}

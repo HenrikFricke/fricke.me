@@ -1,0 +1,8 @@
+# Meta values
+title: "latest tweet"
+dummy: "Wait a moment, there is a tweet..."
+
+# More button
+button:
+  text: "More tweets"
+  url: "https://twitter.com/henrik_fricke"
