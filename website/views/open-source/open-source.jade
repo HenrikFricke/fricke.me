@@ -1,0 +1,25 @@
+- require('./open-source.scss')
+- require('fontawesome')
+- var data = require('./open-source.cson')
+
+//- Sort project list alphabetical
+- data.projects.sort(function (a,b) {
+  - if (a.name < b.name)
+    - return -1
+  - if (a.name > b.name)
+    - return 1
+  - return 0
+- })
+
+.open-source
+  .open-source__container
+    .open-source__title #{data.title}
+    .open-source__description #{data.description}
+    .open-source__projects
+      ul.open-source__list
+        each item in data.projects
+          li.open-source__item
+            a.open-source__link(href="#{item.url}", target="_blank") #{item.name}
+    .open-source__github
+      span.open-source__github-note #{data.github.note}
+      a(href="https://github.com/HenrikFricke/fricke.me", target="_blank").open-source__github-button #{data.github.button}

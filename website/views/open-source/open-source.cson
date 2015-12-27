@@ -1,0 +1,65 @@
+# Meta values
+title: "open source"
+description: """
+This website wouldn't be possible without incredible open source projects. For
+me it's wonderful to see, that people around the world are creating great stuff
+together for everyone. I want to thank every project which help me
+to create this website:
+"""
+
+# Open Source Projects
+projects: [
+  {
+    name: "grunt"
+    url: "http://gruntjs.com/"
+  }
+  {
+    name: "webpack"
+    url: "https://webpack.github.io/"
+  }
+  {
+    name: "bower"
+    url: "http://bower.io/"
+  }
+  {
+    name: "nodejs"
+    url: "https://nodejs.org/"
+  }
+  {
+    name: "npm"
+    url: "https://www.npmjs.com/"
+  }
+  {
+    name: "git"
+    url: "https://git-scm.com/"
+  }
+  {
+    name: "font-awesome"
+    url: "http://fortawesome.github.io/Font-Awesome/"
+  }
+  {
+    name: "griddle"
+    url: "http://gridle.org/"
+  }
+  {
+    name: "jade"
+    url: "http://jade-lang.com/"
+  }
+  {
+    name: "sass"
+    url: "http://sass-lang.com/"
+  }
+  {
+    name: "atom"
+    url: "https://atom.io/"
+  }
+]
+
+# GitHub Note
+github:
+  note: """
+  This website is also available as a open source project on github. Take a look,
+  use it, share it, do whatever you like:
+  """
+
+  button: "Visit on GitHub"
