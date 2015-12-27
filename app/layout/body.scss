@@ -1,0 +1,19 @@
+@import '../style/basics.scss';
+
+// ########################################################
+// ##               Import google font                  ##
+// ########################################################
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+// ########################################################
+// ##               General body styling                 ##
+// ########################################################
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+}

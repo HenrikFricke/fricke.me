@@ -1,19 +1,7 @@
-doctype html
-html
-  head
-    block head
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    // build:css vendor.css
-    // endbuild
-    link(rel="stylesheet", type="text/css", href="style.min.css")
-  body
-    include ../views/nav.jade
-    include ../views/header.jade
-    
-    .container
-      block content
-      
-    // build:js vendor.js
-    // endbuild
-    // build:js app.js
-    // endbuild
+- require('../layout/body.scss')
+
+include ../views/nav/nav.jade
+include ../views/header/header.jade
+
+.container
+  block content
