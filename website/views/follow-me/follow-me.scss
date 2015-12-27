@@ -31,17 +31,18 @@
   margin-top: 35px;
 }
 
-.follow-me__item {
+.follow-me__link:link,
+.follow-me__link:visited, {
+  display: inline-block;
   margin: 0 15px;
-  transition: opacity 400ms, transform 400ms;
+  color: black;
+}
+
+.follow-me__item {
+  transition: transform 400ms;
 
   &:hover,
   &:focus {
     transform: scale(1.2);
   }
-}
-
-.follow-me__link:link,
-.follow-me__link:visited, {
-  color: black;
 }
