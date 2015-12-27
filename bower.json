@@ -16,6 +16,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "gridle": "~2.0.44"
+    "gridle": "~2.0.44",
+    "font-awesome": "fontawesome#~4.5.0"
   }
 }

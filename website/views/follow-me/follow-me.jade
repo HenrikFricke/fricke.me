@@ -1,0 +1,11 @@
+- require('./follow-me.scss')
+- require('fontawesome')
+- var data = require('./follow-me.cson')
+
+.follow-me
+  .follow-me__container
+    .follow-me__title follow me
+    .follow-me__social-icons
+      each icon in data.icons
+        a.follow-me__link(href="#{icon.url}", target="_blank")
+          span.follow-me__item.fa.fa-3x(class="fa-#{icon.icon}")

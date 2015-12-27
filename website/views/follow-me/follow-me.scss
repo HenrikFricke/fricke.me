@@ -1,0 +1,47 @@
+// ########################################################
+// ##                 Import basics                      ##
+// ########################################################
+
+@import '~basicstyle';
+
+// ########################################################
+// ##                    Hero unit                       ##
+// ########################################################
+
+.follow-me {
+  background-color: $main-color;
+  margin-top: 100px;
+}
+
+.follow-me__container {
+  @extend %container-std;
+  padding: 55px 0;
+}
+
+.follow-me__title {
+  @include gridle_grid(12);
+  font-size: 2.3em;
+  text-align: center;
+  font-weight: 300;
+}
+
+.follow-me__social-icons {
+  @include gridle_grid(12);
+  text-align: center;
+  margin-top: 35px;
+}
+
+.follow-me__item {
+  margin: 0 15px;
+  transition: opacity 400ms, transform 400ms;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
+
+.follow-me__link:link,
+.follow-me__link:visited, {
+  color: black;
+}

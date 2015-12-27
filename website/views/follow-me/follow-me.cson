@@ -1,0 +1,18 @@
+# Social Icon list
+icons: [
+  {
+    name: "github"
+    url: "https://github.com/HenrikFricke"
+    icon: "github"
+  }
+  {
+    name: "twitter"
+    url: "https://twitter.com/henrik_fricke"
+    icon: "twitter"
+  }
+  {
+    name: "codepen"
+    url: "http://codepen.io/HenrikFricke/"
+    icon: "codepen"
+  }
+]
