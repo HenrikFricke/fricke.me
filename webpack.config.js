@@ -31,7 +31,10 @@ module.exports = {
         ]
     },
     resolve: {
-        fallback: path.join(__dirname, "node_modules")
+      modulesDirectories: [
+        'node_modules',
+        'bower_components'
+      ]
 	  },
     watch: true,
     plugins: [
@@ -44,6 +47,9 @@ module.exports = {
       new HtmlWebpackPlugin({
         template: 'webpack/template.html',
         inject: 'body'
-      })
+      }),
+      new webpack.ResolverPlugin(
+        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
+      )
     ]
 };
