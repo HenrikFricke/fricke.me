@@ -53,6 +53,10 @@ projects: [
     name: "atom"
     url: "https://atom.io/"
   }
+  {
+    name: "iTerm"
+    url: "https://www.iterm2.com/"
+  }
 ]
 
 # GitHub Note
