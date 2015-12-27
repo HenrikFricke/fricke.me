@@ -1,6 +1,6 @@
 {
   "name": "fricke.me",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "fricke.me - a little portfolio website",
   "main": "app.js",
   "scripts": {
