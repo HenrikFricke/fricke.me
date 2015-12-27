@@ -31,6 +31,13 @@ module.exports = function(grunt) {
       src: '**/*'
     },
 
+    copy: {
+      cname: {
+        src: './CNAME',
+        dest: 'build/'
+      }
+    },
+
     bump: {
       options: {
         files: ['package.json', 'bower.json'],
@@ -44,7 +51,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('dev', ['webpack','connect']);
-  grunt.registerTask('production', ['clean:production', 'webpack', 'bump', 'gh-pages']);
+  grunt.registerTask('production', ['clean:production', 'webpack', 'copy:cname', 'bump', 'gh-pages']);
 
   grunt.registerTask('default', 'dev');
 };
