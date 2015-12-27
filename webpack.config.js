@@ -34,7 +34,10 @@ module.exports = {
       modulesDirectories: [
         'node_modules',
         'bower_components'
-      ]
+      ],
+      alias: {
+        basicstyle: path.join(__dirname, 'website/style/basics.scss')
+      }
 	  },
     watch: true,
     plugins: [
