@@ -23,16 +23,24 @@
 }
 
 .open-source__description {
-  @include gridle_grid(6);
+  @include gridle_grid(10);
   font-size: 1em;
   text-align: center;
   margin: 20px auto 0 auto;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(7);
+  }
 }
 
 .open-source__projects {
-  @include gridle_grid(8);
+  @include gridle_grid(11);
   text-align: center;
   margin: 35px auto 0 auto;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(8);
+  }
 }
 
 .open-source__list {
@@ -71,9 +79,13 @@
 }
 
 .open-source__github {
-  @include gridle_grid(6);
+  @include gridle_grid(10);
   margin: 35px auto 0 auto;
   text-align: center;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(6);
+  }
 }
 
 .open-source__github-note {

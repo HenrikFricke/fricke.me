@@ -7,3 +7,6 @@
     gutter-width : 20px,
     direction : rtl
 ) );
+
+// Breakpoints
+@include gridle_register_state(medium , (min-width : 480px));
