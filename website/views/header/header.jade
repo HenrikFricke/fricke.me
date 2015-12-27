@@ -1,8 +1,8 @@
 - require('./header.scss')
+- var data = require('./header.cson')
 
 header.header
   .header__container
     .header__profile
-    .header__title henrik fricke
-    .header__description
-      | Frontend Dev at Jimdo | Based in Hamburg <3
+    .header__title #{data.title}
+    .header__description #{data.description}
