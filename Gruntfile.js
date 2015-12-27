@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     copy: {
       cname: {
         src: './CNAME',
-        dest: 'build/'
+        dest: 'dist/'
       }
     },
 
