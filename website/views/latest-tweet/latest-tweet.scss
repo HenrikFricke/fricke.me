@@ -26,14 +26,20 @@
 }
 
 .latest-tweet__tweet {
-  @include gridle_grid(12);
-  margin-top: 35px;
+  @include gridle_grid(10);
+  margin: 35px auto 0 auto;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 300;
   font-style: italic;
   position: relative;
   line-height: 2em;
+  word-wrap: break-word;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(12);
+    font-size: 1.8em;
+  }
 
   a:link,
   a:visited {
