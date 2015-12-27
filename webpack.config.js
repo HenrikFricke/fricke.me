@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     context: __dirname,
     entry: {
-      index: "./app/pages/index.js"
+      index: "./website/pages/index.js"
     },
     output: {
         path: './dist/',
