@@ -1,0 +1,16 @@
+# Meta values
+title: "snippets"
+
+# Snippets
+snippets: [
+  {
+    title: "responsive checkout progress bar"
+    description: """
+    It's difficult to design a progress bar which fitts perfect on desktop, but
+    also on mobile devices. This little design concept tries to handle it.
+    """
+    url: "http://codepen.io/HenrikFricke/pen/yNvzwg"
+    screenshot: "./screenshots/progress-bar.jpg"
+    label: ["design concept"]
+  }
+]

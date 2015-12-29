@@ -1,0 +1,93 @@
+// ########################################################
+// ##                 Import basics                      ##
+// ########################################################
+
+@import '~basicstyle';
+
+// ########################################################
+// ##                    Hero unit                       ##
+// ########################################################
+
+.snippets {}
+
+.snippets__container {
+  @extend %container-std;
+  padding: 55px 0;
+}
+
+.snippets__title {
+  @include gridle_grid(12);
+  font-size: 2.3em;
+  text-align: center;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.snippets__description {
+  @include gridle_grid(10);
+  font-size: 1em;
+  text-align: center;
+  margin: 20px auto 0 auto;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(7);
+  }
+}
+
+.snippets__list {
+  @include gridle_grid(12);
+  display: block;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.snippets__item {
+  @extend %clearfix;
+  @include gridle_grid(10);
+  display: block;
+  background-color: $light-grey;
+  padding: 0;
+  margin: 0 auto;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(12);
+  }
+}
+
+.snippets__item-title {
+  @include gridle_grid(12);
+  display: block;
+  font-size: 1.5em;
+  text-align: left;
+  font-weight: 300;
+  line-height: 1;
+  padding: 20px;
+  box-sizing: border-box;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(8);
+    float: right;
+  }
+}
+
+.snippets__item-description {
+  @include gridle_grid(12);
+  padding: 20px;
+  box-sizing: border-box;
+  display: block;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(8);
+    float: right;
+  }
+}
+
+.snippets__item-screenshot {
+  @include gridle_grid(12);
+  max-width: 100%;
+
+  @include gridle_state(medium) {
+    @include gridle_grid(4);
+    float: left;
+  }
+}

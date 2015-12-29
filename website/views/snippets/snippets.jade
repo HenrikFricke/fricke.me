@@ -1,0 +1,16 @@
+- require('./snippets.scss')
+- require('fontawesome')
+- var data = require('./snippets.cson')
+
+.snippets
+  .snippets__container
+    .snippets__title #{data.title}
+    .snippets__projects
+      ul.snippets__list
+        each item in data.snippets
+          li.snippets__item
+            img.snippets__item-screenshot(src=require("#{item.screenshot}"))
+            span.snippets__item-title #{item.title}
+            span.snippets__item-description #{item.description}
+            
+            
