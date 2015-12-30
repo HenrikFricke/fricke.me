@@ -7,10 +7,12 @@
     .snippets__title #{data.title}
     .snippets__projects
       ul.snippets__list
-        each item in data.snippets
+        each item in data.snippets.reverse()
+          - var image = require("./screenshots/" + item.screenshot)
           li.snippets__item
-            img.snippets__item-screenshot(src=require("#{item.screenshot}"))
-            span.snippets__item-title #{item.title}
+            a(href="#{item.url}", target="_blank")
+              span.snippets__item-screenshot(style="background-image: url('#{image}')")
+            a(href="#{item.url}", target="_blank").snippets__item-title #{item.title}
             span.snippets__item-description #{item.description}
             
             
