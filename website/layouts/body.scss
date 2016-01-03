@@ -5,10 +5,14 @@
 @import '~basicstyle';
 
 // ########################################################
-// ##               Import google font                  ##
+// ##               Import open sans                     ##
 // ########################################################
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+$open-sans-path: '~open-sans/fonts';
+@import '~open-sans/scss/base';
+@import '~open-sans/scss/regular';
+@import '~open-sans/scss/light';
+@import '~open-sans/scss/semibold';
 
 // ########################################################
 // ##               General body styling                 ##
@@ -19,5 +23,5 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 300;
 }

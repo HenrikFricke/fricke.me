@@ -1,6 +1,7 @@
-var webpack = require("webpack");
-var path = require("path");
+var webpack = require("webpack")
+var path = require("path")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
     context: __dirname,
@@ -16,8 +17,8 @@ module.exports = {
         loaders: [
             { test: /\.json$/,   loader: "json-loader" },
             { test: /\.cson$/,   loader: "cson" },
-            { test: /\.scss$/,   loader: "style!css!sass?sourceMap" },
-            { test: /\.css$/,    loader: 'style!css-loader' },
+            { test: /\.scss$/,   loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
+            { test: /\.css$/,    loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
             { test: /\.jade$/,   loader: "jade-loader?self" },
             { test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000" },
             { test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000" },
@@ -54,6 +55,7 @@ module.exports = {
       }),
       new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
-      )
+      ),
+      new ExtractTextPlugin("style.bundle.css")
     ]
 };
