@@ -3,7 +3,7 @@ var path = require("path")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
-module.exports = {
+var config  = {
     context: __dirname,
     entry: {
       index: "./website/pages/index.js"
@@ -37,7 +37,7 @@ module.exports = {
         'bower_components'
       ],
       alias: {
-        basicstyle: path.join(__dirname, 'website/style/basics.scss'),
+        sasslib: path.join(__dirname, 'website/libs/sasslib/basics.scss'),
         fontawesome: path.join(__dirname, 'bower_components/font-awesome/scss/font-awesome.scss')
       }
 	  },
@@ -56,6 +56,8 @@ module.exports = {
       new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
       ),
-      new ExtractTextPlugin("style.bundle.css")
+      new ExtractTextPlugin("[name].bundle.css")
     ]
 };
+
+module.exports = config;
