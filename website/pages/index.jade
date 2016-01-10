@@ -1,7 +1,16 @@
 extends ../layouts/base.jade
 
+//- head
+block head 
+  title fricke.me
+  link(rel="stylesheet", href="index.css", type="text/css")
+
 //- body 
 block content
   include ../views/snippets/snippets.jade
   include ../views/latest-tweet/latest-tweet.jade  
   include ../views/open-source/open-source.jade
+
+//- body 
+block scripts
+  script(type="text/javascript", src="index.js")

@@ -1,27 +1,28 @@
-# Meta values
-title: "snippets"
+snippets:
+  # Meta values
+  title: "snippets"
 
-# Snippets
-snippets: [
-  {
-    title: "responsive checkout progress bar"
-    description: """
-    It's difficult to design a progress bar which fitts perfect on desktop, but
-    also on mobile devices. This little design concept tries to handle it.
-    """
-    url: "http://codepen.io/HenrikFricke/pen/yNvzwg"
-    screenshot: "progress-bar.jpg"
-    label: ["design concept"]
-  }
-  {
-    title: "svg flickr loading spinner"
-    description: """
-    I guess SVG is the most wanted topic of the year 2015. And yes, i had
-    to play with it as well. The flickr loading spinner was my first experience
-    with svg + css animations.
-    """
-    url: "http://codepen.io/HenrikFricke/pen/bVMJwj"
-    screenshot: "flickr.jpg"
-    label: ["css stuff"]
-  }
-]
+  # Snippets
+  snippets: [
+    {
+      title: "responsive checkout progress bar"
+      description: """
+      It's difficult to design a progress bar which fitts perfect on desktop, but
+      also on mobile devices. This little design concept tries to handle it.
+      """
+      url: "http://codepen.io/HenrikFricke/pen/yNvzwg"
+      screenshot: "progress-bar.jpg"
+      label: ["design concept"]
+    }
+    {
+      title: "svg flickr loading spinner"
+      description: """
+      I guess SVG is the most wanted topic of the year 2015. And yes, i had
+      to play with it as well. The flickr loading spinner was my first experience
+      with svg + css animations.
+      """
+      url: "http://codepen.io/HenrikFricke/pen/bVMJwj"
+      screenshot: "flickr.jpg"
+      label: ["css stuff"]
+    }
+  ]

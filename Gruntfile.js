@@ -35,6 +35,15 @@ module.exports = function(grunt) {
       cname: {
         src: './CNAME',
         dest: 'dist/'
+      },
+      images: {
+        files: [{
+          expand: true,
+          cwd: 'website/views/',
+          src: ['**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg'],
+          dest: 'dist',
+          flatten: true
+        }]
       }
     },
 
@@ -47,11 +56,40 @@ module.exports = function(grunt) {
         tagMessage: 'Version %VERSION%',
         pushTo: 'origin'
       }
+    },
+
+    jade: {
+      compile: {
+        options: {
+          data: function(dest, src) {
+            var path = require('path');
+            return grunt.file.readJSON('dist/' + path.basename(src, '.jade') + '.json');
+          }
+        },
+        files: [{
+          expand: true,
+          cwd: 'website/pages',
+          src: ['**/*.jade'],
+          dest: 'dist',
+          ext: '.html'
+        }]
+      }
+    },
+
+    cson: {
+      compile: {
+        expand: true,
+        cwd: 'dist',
+        src: ['**/*.cson' ],
+        dest: 'dist',
+        ext: '.json'
+      }
     }
   });
 
-  grunt.registerTask('dev', ['webpack','connect']);
-  grunt.registerTask('production', ['clean:production', 'webpack', 'copy:cname', 'bump', 'gh-pages']);
+  grunt.registerTask('compile', ['webpack', 'copy:images', 'cson', 'jade']);
+  grunt.registerTask('dev', ['compile', 'connect']);
+  grunt.registerTask('production', ['clean:production', 'compile', 'copy:cname', 'bump', 'gh-pages']);
 
   grunt.registerTask('default', 'dev');
 };

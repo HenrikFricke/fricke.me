@@ -1,7 +1,8 @@
 var webpack = require("webpack")
 var path = require("path")
-var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var csonExtractor = new ExtractTextPlugin("cson", "[name].cson");
+var cssExtractor = new ExtractTextPlugin("css", "[name].css");
 
 var config  = {
     context: __dirname,
@@ -11,14 +12,13 @@ var config  = {
     output: {
         path: './dist/',
         publicPath: '',
-        filename: "[name].bundle.js"
+        filename: "[name].js"
     },
     module: {
         loaders: [
-            { test: /\.json$/,   loader: "json-loader" },
-            { test: /\.cson$/,   loader: "cson" },
-            { test: /\.scss$/,   loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader") },
-            { test: /\.css$/,    loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+            { test: /\.cson$/,   loader: csonExtractor.extract("raw") },
+            { test: /\.scss$/,   loader: cssExtractor.extract("style", "css!sass") },
+            { test: /\.css$/,    loader: cssExtractor.extract("style", "css") },
             { test: /\.jade$/,   loader: "jade-loader?self" },
             { test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000" },
             { test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000" },
@@ -49,14 +49,11 @@ var config  = {
           },
           sourceMap: true
       }),
-      new HtmlWebpackPlugin({
-        template: 'webpack/template.html',
-        inject: 'body'
-      }),
       new webpack.ResolverPlugin(
         new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
       ),
-      new ExtractTextPlugin("[name].bundle.css")
+      csonExtractor,
+      cssExtractor
     ]
 };
 

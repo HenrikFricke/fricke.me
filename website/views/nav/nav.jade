@@ -1,9 +1,6 @@
-- require('./nav.scss')
-- var data = require('./nav.cson')
-
 nav.nav
   .nav__container
     ul.nav__list
-      each item in data.navitems
+      each item in nav.navitems
         li.nav__item 
           a.nav__link(href="##{item.link}") #{item.name}

@@ -1,4 +1,7 @@
-var body = require("./index.jade")();
+// layout
+require('../layouts/base-entry.js')
 
-document.title = 'fricke.me';
-document.body.innerHTML = body;
+// components
+require('../views/snippets/entry.js')
+require('../views/latest-tweet/entry.js')
+require('../views/open-source/entry.js')

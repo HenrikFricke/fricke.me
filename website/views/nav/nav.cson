@@ -1,19 +1,20 @@
-# Navigation items
-navitems: [
-  {
-    name: "home"
-    link: "home"
-  }
-  {
-    name: "snippets"
-    link: "snippets"
-  }
-  {
-    name: "about"
-    link: "about"
-  }
-  {
-    name: "follow me"
-    link: "follow-me"
-  }
-]
+nav: 
+  # Navigation items
+  navitems: [
+    {
+      name: "home"
+      link: "home"
+    }
+    {
+      name: "snippets"
+      link: "snippets"
+    }
+    {
+      name: "about"
+      link: "about"
+    }
+    {
+      name: "follow me"
+      link: "follow-me"
+    }
+  ]
