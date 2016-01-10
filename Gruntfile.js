@@ -6,7 +6,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // clean up folders
     clean: {
-      production: ["dist"]
+      production: ["dist"],
+      ghpages: ["dist/*.{json,cson}"]
     },
 
     webpack: {
@@ -39,7 +40,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'website/views/',
-          src: ['**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg'],
+          src: ['**/*.{jpg,png,gif,jpeg,svg}'],
           dest: 'dist',
           flatten: true
         }]
@@ -95,12 +96,41 @@ module.exports = function(grunt) {
         files: ['dist/*.cson'],
         tasks: ['cson', 'jade']
       }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist',
+          src: ['**/*.html'],
+          dest: 'dist',
+          ext: '.html'        }]
+      }
+    },
+
+    imagemin: {
+      dist: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist',
+          src: ['**/*.{png,jpg,jpeg,gif}'],
+          dest: 'dist'
+        }]
+      }
     }
   });
 
   grunt.registerTask('compile', ['webpack', 'copy:images', 'cson', 'jade']);
   grunt.registerTask('dev', ['compile', 'connect', 'watch']);
-  grunt.registerTask('production', ['clean:production', 'compile', 'copy:cname', 'bump', 'gh-pages']);
+  grunt.registerTask('production', ['clean:production', 'compile', 'htmlmin', 'imagemin', 'copy:cname', 'clean:ghpages', 'bump', 'gh-pages']);
 
   grunt.registerTask('default', 'dev');
 };
