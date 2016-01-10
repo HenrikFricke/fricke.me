@@ -1,9 +1,12 @@
-include ../../libs/jadelib/commons/layout-head.jade
-body
-  header.header
-    .header__container
-      .header__title
-        block title
-  section.content
-    block content
-  include ../../libs/jadelib/commons/layout-footer.jade
+doctype html
+html
+  head
+    include ../../libs/jadelib/commons/layout-head.jade
+  body
+    header.header
+      .header__container
+        .header__title
+          block title
+    section.content
+      block content
+    include ../../libs/jadelib/commons/layout-footer.jade
