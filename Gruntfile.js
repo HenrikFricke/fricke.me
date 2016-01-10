@@ -17,9 +17,8 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 9000,
-          hostname: 'localhost',
           base: ['dist'],
-          keepalive: true
+          livereload: true
         }
       }
     },
@@ -85,11 +84,22 @@ module.exports = function(grunt) {
         dest: 'dist',
         ext: '.json'
       }
+    },
+
+    watch: {
+      jade: {
+        files: ['website/pages/**/*.jade'],
+        tasks: ['jade']
+      },
+      cson: {
+        files: ['dist/*.cson'],
+        tasks: ['cson', 'jade']
+      }
     }
   });
 
   grunt.registerTask('compile', ['webpack', 'copy:images', 'cson', 'jade']);
-  grunt.registerTask('dev', ['compile', 'connect']);
+  grunt.registerTask('dev', ['compile', 'connect', 'watch']);
   grunt.registerTask('production', ['clean:production', 'compile', 'copy:cname', 'bump', 'gh-pages']);
 
   grunt.registerTask('default', 'dev');
