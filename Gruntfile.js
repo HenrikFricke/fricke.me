@@ -71,7 +71,8 @@ module.exports = function(grunt) {
           cwd: 'website/pages',
           src: ['**/*.jade'],
           dest: 'dist',
-          ext: '.html'
+          ext: '.html',
+          flatten: true
         }]
       }
     },

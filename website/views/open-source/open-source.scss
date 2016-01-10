@@ -24,6 +24,7 @@
 
 .open-source__description {
   @include gridle_grid(10);
+  @include gridle_grid_centered();
   font-size: 1em;
   text-align: center;
   margin: 20px auto 0 auto;
@@ -35,6 +36,7 @@
 
 .open-source__projects {
   @include gridle_grid(11);
+  @include gridle_grid_centered();
   text-align: center;
   margin: 35px auto 0 auto;
 
@@ -80,6 +82,7 @@
 
 .open-source__github {
   @include gridle_grid(10);
+  @include gridle_grid_centered();
   margin: 35px auto 0 auto;
   text-align: center;
 

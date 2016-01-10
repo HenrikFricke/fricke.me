@@ -1,3 +1,7 @@
+// ########################################################
+// ##                 placeholders                       ##
+// ########################################################
+
 %clearfix {
   &:before,
   &:after {
@@ -8,9 +12,10 @@
 }
 
 %container-std {
-  @extend %clearfix;
-  @include gridle_row();
-  max-width:960px;
-  margin:0 auto;
+  @include gridle_container();
+  max-width: 960px;
+  margin: 0 auto;
   box-sizing: border-box;
+  padding-right: 20px;
+  padding-left: 20px;
 }

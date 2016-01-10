@@ -1,0 +1,18 @@
+extends ../../layouts/single/single.jade
+
+//- head
+block head 
+  title imprint # fricke.me
+  link(rel="stylesheet", href="imprint.css", type="text/css")
+
+//- content title
+block title
+  | imprint
+  
+//- body 
+block content
+  include:markdown imprint.md
+      
+//- body 
+block scripts
+  script(type="text/javascript", src="imprint.js")

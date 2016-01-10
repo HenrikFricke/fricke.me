@@ -36,6 +36,7 @@
     "imports-loader": "^0.6.5",
     "jade-loader": "^0.8.0",
     "json-loader": "^0.5.4",
+    "jstransformer-markdown": "^1.1.0",
     "load-grunt-tasks": "^3.3.0",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.4.2",

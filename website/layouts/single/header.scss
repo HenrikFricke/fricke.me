@@ -1,0 +1,29 @@
+// ########################################################
+// ##                 Import basics                      ##
+// ########################################################
+
+@import '~sasslib';
+
+// ########################################################
+// ##                    Hero unit                       ##
+// ########################################################
+
+.header {
+  background-color: $main-color;
+  padding: 15px 0;
+}
+
+.header__container {
+  @extend %container-std;
+}
+
+.header__title {
+  @include gridle_grid ( 12 );
+  font-size: 2.3em;
+  text-align: center;
+  font-weight: 300;
+
+  @include gridle_state(medium) {
+    text-align: left;
+  }
+}

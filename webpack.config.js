@@ -7,7 +7,8 @@ var cssExtractor = new ExtractTextPlugin("css", "[name].css");
 var config  = {
     context: __dirname,
     entry: {
-      index: "./website/pages/index.js"
+      index: "./website/pages/index/entry.js",
+      imprint: "./website/pages/imprint/entry.js"
     },
     output: {
         path: './dist/',
