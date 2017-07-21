@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "grunt",
     "build": "grunt production",
-    "compile": "grunt compile"
+    "compile": "$(npm bin)/grunt compile"
   },
   "repository": {
     "type": "git",
