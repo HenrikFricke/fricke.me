@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "grunt",
-    "build": "grunt production"
+    "build": "grunt production",
+    "compile": "grunt compile"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
+    "grunt-cli": "^1.2.0",
     "grunt-bump": "^0.7.0",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-connect": "^0.11.2",
