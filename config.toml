@@ -1,0 +1,12 @@
+baseURL = "http://fricke.me/"
+languageCode = "en-us"
+title = "fricke.me"
+author = "Henrik Fricke"
+copyright = "Henrik Fricke"
+
+[params]
+logo  = "/images/logo.jpg"
+welcome = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget sodales erat. Cras feugiat placerat sem, ac tincidunt lacus vehicula a. Pellentesque sem velit, viverra ultrices ornare ut, pretium ac."
+twitter = "https://twitter.com/henrik_fricke"
+github = "https://github.com/henrikfricke/"
+email = "post@fricke.me"
