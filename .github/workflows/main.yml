@@ -2,8 +2,8 @@ name: CI
 
 on: [push]
 
-jobs:
-  checkout:
+jobs:  
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -12,36 +12,18 @@ jobs:
         node-version: '10.x'
     - name: Install dependencies
       run: yarn
-    - uses: actions/upload-artifact@master
-      with:
-        name: node_modules
-        path: node_modules
-  
-  test:
-    runs-on: ubuntu-latest
-    needs: checkout
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - uses: actions/download-artifact@master
-      with:
-        name: node_modules
-    - name: Unit tests
+    - name: Run unit tests
       run: yarn test
   
   build:
     runs-on: ubuntu-latest
-    needs: checkout
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - uses: actions/download-artifact@master
-      with:
-        name: node_modules   
+    - name: Install dependencies
+      run: yarn
     - name: Build
       run: yarn build
       
