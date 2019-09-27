@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:jest/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["graphql", "jest", "sort-imports-es6-autofix"],
+  "settings": {
+    "react": {
+      "version": "16.9.0"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".tsx", ".ts"]
+      }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/no-parameter-properties": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "sort-imports-es6-autofix/sort-imports-es6": [
+      2,
+      {
+        "ignoreCase": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "no-process-env": 0,
+    "react/prop-types": 0,
+    "react/display-name": 0
+  }
+}
