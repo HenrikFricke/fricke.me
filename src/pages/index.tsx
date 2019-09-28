@@ -1,6 +1,4 @@
-import { Image } from '../components/Image/Image';
 import { Layout } from '../components/Layout/Layout';
-import { Link } from 'gatsby';
 import { SEO } from '../components/SEO/SEO';
 import React from 'react';
 
@@ -8,12 +6,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   );
 };
