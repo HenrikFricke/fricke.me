@@ -1,20 +1,14 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Link } from 'gatsby';
-import AppBar from '@material-ui/core/AppBar';
+import { Link as GatsbyLink } from 'gatsby';
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1
-    },
-    menuButton: {
-      marginRight: theme.spacing(2)
-    },
-    title: {
-      flexGrow: 1
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3)
     }
   })
 );
@@ -27,22 +21,10 @@ export const Header: React.FC<Props> = ({ siteTitle = '' }) => {
   const classes = useStyles();
 
   return (
-    <header className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <Link
-              to="/"
-              style={{
-                color: `white`,
-                textDecoration: `none`
-              }}
-            >
-              {siteTitle}
-            </Link>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </header>
+    <Container component="header" maxWidth="md" classes={classes}>
+      <Link to="/" color="textPrimary" variant="h6" component={GatsbyLink}>
+        {siteTitle}
+      </Link>
+    </Container>
   );
 };
