@@ -1,4 +1,5 @@
 import './Layout.css';
+import 'typeface-roboto';
 import { Container } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Header } from '../Header/Header';

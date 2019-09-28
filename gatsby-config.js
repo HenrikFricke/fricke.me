@@ -30,14 +30,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-typescript-checker`,
     `gatsby-plugin-material-ui`,
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Roboto']
-        }
-      }
-    },
     `gatsby-plugin-graphql-codegen`,
     {
       resolve: 'gatsby-plugin-eslint',
