@@ -1,7 +1,6 @@
+import { Container, Link } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Link as GatsbyLink } from 'gatsby';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
