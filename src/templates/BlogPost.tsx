@@ -1,6 +1,7 @@
 import { BlogPostTemplateQuery } from '../../graphql-types';
 import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout/Layout';
+import { renderHtmlAst } from '../utils/renderHtmlAst';
 import { SEO } from '../components/SEO/SEO';
 import { Typography } from '@material-ui/core';
 import React from 'react';
@@ -12,7 +13,7 @@ export interface Props {
 const BlogPostTemplate: React.FC<Props> = ({
   data: { markdownRemark: post }
 }) => {
-  if (!post || !post.frontmatter || !post.html) {
+  if (!post || !post.frontmatter || !post.htmlAst) {
     return null;
   }
 
@@ -22,7 +23,7 @@ const BlogPostTemplate: React.FC<Props> = ({
       <Typography variant="h1" gutterBottom>
         {post.frontmatter.title}
       </Typography>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      {renderHtmlAst(post.htmlAst)}
     </Layout>
   );
 };
@@ -30,7 +31,7 @@ const BlogPostTemplate: React.FC<Props> = ({
 export const query = graphql`
   query BlogPostTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
+      htmlAst
       frontmatter {
         title
         date

@@ -27,6 +27,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "rehype-react": "^4.0.1",
     "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "@types/react": "^16.9.3",
     "@types/react-dom": "^16.9.1",
     "@types/react-helmet": "^5.0.11",
+    "@types/rehype-react": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",
