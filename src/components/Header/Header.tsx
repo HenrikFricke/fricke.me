@@ -20,7 +20,7 @@ export const Header: React.FC<Props> = ({ siteTitle = '' }) => {
   const classes = useStyles();
 
   return (
-    <Container component="header" maxWidth="md" classes={classes}>
+    <Container component="header" maxWidth="md" className={classes.root}>
       <Link to="/" color="textPrimary" variant="h6" component={GatsbyLink}>
         {siteTitle}
       </Link>
