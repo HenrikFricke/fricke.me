@@ -1,6 +1,7 @@
 ---
 date: 2019-09-28T14:42:16.228Z
 title: 'Hello world'
+excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu ipsum commodo, tempus diam id, condimentum magna. Integer finibus ipsum dolor, iaculis placerat ligula congue sit amet. In ut bibendum.'
 ---
 
 ## I'm a h2

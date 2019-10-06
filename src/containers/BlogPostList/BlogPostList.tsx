@@ -32,6 +32,7 @@ export const BlogPostList: React.FC = () => {
             fileAbsolutePath
             frontmatter {
               title
+              excerpt
             }
           }
         }
@@ -54,7 +55,7 @@ export const BlogPostList: React.FC = () => {
           >
             <ListItemText
               primary={node.frontmatter!.title!}
-              secondary="I'll be in your neighborhood doing errands this…"
+              secondary={node.frontmatter!.excerpt!}
             />
           </ListItem>
           {index + 1 < posts.edges.length && <Divider variant="middle" />}
