@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `fricke.me`,
     description: `Dev blog`,
-    author: `@HenrikFricke`
+    author: `@henrik_fricke`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,13 +31,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `fricke.me`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        display: `minimal-ui`
       }
     },
     `gatsby-plugin-typescript`,
